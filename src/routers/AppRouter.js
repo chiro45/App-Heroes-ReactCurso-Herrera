@@ -6,12 +6,11 @@ import {DashboardRoutes} from './DashboardRoutes'
 
 export const AppRouter = () => {
     return (
+        // el BrowserRouter => nos permite
         <BrowserRouter>
            
             <Routes>
                 <Route path= '/login' element={<LoginScreen/>} />
-
-
                 <Route path='/*' element={<DashboardRoutes/>} />
             </Routes>
 

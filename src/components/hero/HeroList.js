@@ -14,6 +14,7 @@ export const HeroList = ({publisher }) => {
 
         
              {
+                 //hacemos un map del objeto heroes, y imprimimos el componente cuantas veces sea necesario
                  heroes.map(hero => (
                      <HeroCard 
                      key={hero.id}

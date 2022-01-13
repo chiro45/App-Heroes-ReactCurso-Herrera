@@ -4,14 +4,17 @@ import { useParams, useNavigate } from "react-router-dom"
 import {getHeroById} from '../../selectors/getHeroById'
 
 
+//pagina de heroe
+
 export const Hero = () => {
-   
+   //el useNavigate nos permite volver una pagina atras en este caso
    const Navigate = useNavigate();
     
-    
+    //el use params saca los parametros de la url
     const {heroeId} = useParams();
     //memorizamos el heroe y luego este se actualiza cada vez que cambie
     const hero = useMemo( () => getHeroById(heroeId),[heroeId])
+    //desestructuramos todas las propiedades de hero
     const {
         id,
         superhero,
@@ -20,11 +23,13 @@ export const Hero = () => {
         first_appearance,
         characters
     } = hero
+    //si es diferente a hero volvemos a la pagina main
     if(!hero) {
         return ( <Navigate to="/"/>)
     }
+    //ruta de imagenes con el id 
     const imgPath =`/assets/${id}.jpg`
-    
+    //retornamos una pagina atras cuando se dispare el evento
     const handleReturn = ()=>{
         Navigate(-1)
     }

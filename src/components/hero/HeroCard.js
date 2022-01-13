@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom"
+
+
+//creamos el rafc y le decimos que necesita todas estas propiedades para mostrarse
 export const HeroCard = ({
     id,
     superhero,
@@ -28,6 +31,7 @@ export const HeroCard = ({
                             <p className="card-text">{alter_ego}</p>
 
                            {
+                            //si alter y char son diferentes entonces mostrames los caracteres
                             (alter_ego != characters) && 
 
                             <p className="text-muted">{characters}</p>
@@ -37,7 +41,7 @@ export const HeroCard = ({
                            <p className="card-text">
                                <small className="text-muted">{first_appearance}</small>
                            </p>
-
+                           {/* ruteo a ver mas  */}
                            <Link to={`/hero/${id}`}>
                                Mas...
                            </Link>   
