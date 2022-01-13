@@ -11,9 +11,9 @@ export const SearchScreen = () => {
     
     const navigate = useNavigate()
     //nos da la locationd e donde estamos en a pagina
-    const location = useLocation()
-
-    const {q = ''} = queryString.parse(location.search)
+    const location = useLocation(),
+    
+     {q = ''} = queryString.parse(location.search)
 
    
     const [ formValues, handleInputChange, reset] = useForm( {
