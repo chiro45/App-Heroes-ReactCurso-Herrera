@@ -2,7 +2,6 @@ import { HeroCard } from "./HeroCard"
 
 import { getHeroesByPUblisher } from "../../selectors/getHeroByPublisher"
 import { useMemo } from "react"
-
 export const HeroList = ({publisher }) => {
     //memorizamos la publicadora del heroe y cambia cuando cambia la publicadora
     const heroes = useMemo( ()=>  getHeroesByPUblisher(publisher),[publisher])

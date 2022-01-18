@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 
+const heroImages = require.context('../../assets', true)
 
 //creamos el rafc y le decimos que necesita todas estas propiedades para mostrarse
 export const HeroCard = ({
@@ -11,7 +12,7 @@ export const HeroCard = ({
     characters
 }) => {
         
-    const imgPath =`assets/${id}.jpg`
+    const imgPath = heroImages(`./${id}.jpg`)
     return (
         <div className="col">
             <div className="card">

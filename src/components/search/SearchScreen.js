@@ -30,6 +30,8 @@ export const SearchScreen = () => {
         e.preventDefault()
         navigate(`?q=${searchText}`)
         reset()
+
+        
     }
 
     return (

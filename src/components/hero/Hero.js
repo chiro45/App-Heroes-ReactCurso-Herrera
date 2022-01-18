@@ -3,6 +3,10 @@ import { useParams, useNavigate } from "react-router-dom"
 
 import {getHeroById} from '../../selectors/getHeroById'
 
+ 
+
+//import batman from '../../assets/dc-batman.jpg' para un recurso estatico
+const heroImages = require.context('../../assets', true)
 
 //pagina de heroe
 
@@ -28,7 +32,7 @@ export const Hero = () => {
         return ( <Navigate to="/"/>)
     }
     //ruta de imagenes con el id 
-    const imgPath =`/assets/${id}.jpg`
+    const imgPath = heroImages(`./${id}.jpg`)
     //retornamos una pagina atras cuando se dispare el evento
     const handleReturn = ()=>{
         Navigate(-1)
@@ -42,7 +46,7 @@ export const Hero = () => {
            
         </div>
         <div className="col-8 animate__animated animate__fadeIn">
-            <h3 >{hero.superhero}</h3>
+            <h3 >{superhero}</h3>
             <ul className="list-group-flush">
             <li className='list-group-item'><b>Alter ego: {alter_ego}</b></li>
             <li className='list-group-item'><b>Publicadora: {publisher}</b></li>
